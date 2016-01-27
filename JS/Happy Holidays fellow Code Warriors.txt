@@ -1,0 +1,24 @@
+const sortGiftCode = code => code.split('').sort().join('');
+
+function sortGiftCode(code){
+  var result = [];
+  for(var i=0; i< code.length;i++){
+    result.push(code.substr(i,1));
+  }
+  return result.sort().join('');
+}
+
+function sortGiftCode(code){
+  var s = code.split('').sort()
+  return s.join('');
+}
+
+function sortGiftCode(code){
+  var len = code.length;
+  var giftCodeArray = [];
+  for (i=0; i < len; i++) {
+    giftCodeArray.push(code.slice(i, i+1));
+  }
+  giftCodeArray.sort();
+  return giftCodeArray.join('');
+}
