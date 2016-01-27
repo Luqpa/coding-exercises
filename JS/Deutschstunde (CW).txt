@@ -1,0 +1,37 @@
+function derDieDas(word){
+ var worp = word;
+ var counter = 0;
+ var vowels = ["ü", "ä", 'ö', 'a', 'e', 'i', 'o', 'u'];
+ word = word.toLowerCase().split("");
+ for(var i = 0; i < word.length; i++) {
+     for(var j = 0; j < vowels.length; j++) {
+     if (word[i] === vowels[j]) {
+         counter++;
+     }
+     } 
+ }
+ 
+ if(counter < 2) {return "das " + worp;
+     
+ } else if(counter == 2 || counter == 3) {return "die " + worp;
+     
+ } else if(counter > 3){ return "der " + worp;}
+}
+
+function derDieDas(wort){
+  var i = ~~((wort.match(/([aeiouäöü])/gi) || []).length / 2);
+  return ['das ', 'die ', 'der '][i < 2 ? i : 2] + wort;
+}
+
+function derDieDas(wort) {
+  var vowels = (wort.match(/([aeiouäöü])/ig) || []).length;
+  return (vowels < 2 ? "das" : (vowels > 3 ? "der" : "die")) + " " + wort;
+}
+
+const count = xs => [...xs.toLowerCase()].filter(x => 'aeiouäöü'.indexOf(x) > -1).length
+
+function derDieDas(wort){
+   let c = count(wort)
+   let a = c > 3 ? 'der' : c > 1 ? 'die' : 'das'
+   return `${a} ${wort}`
+}
