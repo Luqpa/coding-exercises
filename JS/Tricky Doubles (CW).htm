@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta lang="en"/>
+
+</head>
+
+<body>
+
+<!----code wars
+http://www.codewars.com/kata/56971747aa359bdbf800004d/train/javascript  
+Create a function that returns twice the supplied value unless it is a tricky double.
+
+The trick: if the number passed in is a double, simply return the value that was passed.
+
+Examples of a double number include:
+
+    44
+    77
+    3333
+    8787
+    100100
+
+In the example 8787, the number 87 is doubled (appears twice).
+
+
+-->
+
+
+<script>
+
+
+ function trickyDoubles(n){
+ //insert your code here
+ var possibleTricky = (String(n).length)%2;
+ if (possibleTricky !=0 ) {return 2*n } else {
+    var middle = (String(n).length /2);
+    var numP1 = String(n).slice(0,middle);
+    var numP2 = String(n).slice(middle);
+    
+    if (numP1 == numP2) {console.log ('same');}
+    return numP1 == numP2 ? n : 2*n;
+ }
+ 
+
+
+ return n;
+}
+ 
+  
+ var ret1 = trickyDoubles(100100);
+  console.log (ret1);
+ 
+
+  </script>
+
+
+
+
+</body>
+</html>

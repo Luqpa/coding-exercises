@@ -1,0 +1,43 @@
+function trickyDoubles(n){
+  var nStr = n.toString();
+  if ((nStr.length % 2 == 1) || (nStr.slice(0, nStr.length / 2) != nStr.slice(nStr.length / 2,))) {
+    return n * 2;
+  } else {
+    return n;
+  }
+}
+
+function trickyDoubles(n){s=n+""; return s.substring(0,d=(len=s.length)>>1)==s.substring(d)?n:n<<1}
+
+function trickyDoubles(n){
+ var nl = n.toString().length;
+ var nlh = nl/2;
+ var nso = n.toString().slice(0,nlh-1);
+ var nst = n.toString().slice(nlh,nl-1);
+ if(nl % 2 === 0){ // Only even length numbers
+   if(nso === nst){
+     return n;
+   }
+   else{
+     return n*2;
+   }
+ }
+ return n * 2;
+}
+
+function trickyDoubles(n) {
+  let s = n.toString(), sh = s.slice(s.length / 2);
+  return sh + sh == s ? n : n * 2;
+}
+
+function trickyDoubles(n){
+  var numsArr = n.toString(10).split("").map(Number);
+  var leftHalf = numsArr.splice(0, Math.floor(numsArr.length / 2));
+  return (leftHalf.join() === numsArr.join()) ? n : n * 2;
+}
+
+function trickyDoubles(n){
+  var str = n + "";
+ if(str.slice(str.length/2)===str.slice(0, str.length/2)) return n;
+ return n*2;
+}
