@@ -1,0 +1,37 @@
+const findSpaceship = (map = "") => {
+  map = map.split("\n").reverse()
+
+  for (let y = 0; y < map.length; y++) {
+    for (let x = 0; x < map[y].length; x++) {
+      if (map[y][x] === "X") return [x, y]
+    }
+  }
+
+  return "Spaceship lost forever."
+}
+
+function findSpaceship(map) {
+  if (typeof map=='string') {
+    s=map.split('\n'); c=s[0].length;
+    for (i=0; i<s.length;i++) if (c!=s[i].length) return [0,0]; else if ((p=s[i].indexOf("X"))>=0) return [p,i];
+  }
+  return "Spaceship lost forever.";
+}
+
+function findSpaceship(map) {
+ var r=-1;
+ var l=-1;
+ if(!map) return "Spaceship lost forever.";
+ var rows = map.split('\n');
+ for (var i=0;i<rows.length;i++){
+   var lines = rows[i].split('');   
+   for (var j=0;j<lines.length;j++){
+     if(lines[j]!='.'){
+       r=i;
+       l=j;
+     }
+   }
+ }
+ return (r>=0&&l>=0)?[l,rows.length-r-1]:"Spaceship lost forever.";
+}
+

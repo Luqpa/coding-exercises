@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta lang="en"/>
+
+</head>
+
+<body>
+
+<!----code wars
+http://www.codewars.com/kata/5660aa3d5e011dfd6e000063/train/javascript
+
+ALF has the technology to bring the spaceship home if he can lock on to it's location.
+
+Given a map:
+
+..........
+..........
+..........
+.......X..
+..........
+..........
+
+The map will be given in the form of a string with \n separating new lines. The bottom left of the map is [0, 0]. X is ALF's spaceship.
+
+In this expample:findSpaceship(map) => [7, 2]
+
+If you cannot find the spaceship, the result should be
+
+
+-->
+
+
+<script>
+
+function findSpaceship(map) {
+  if ((typeof (map)) !== 'string') return "Spaceship lost forever.";
+  arr = map.split('\n');
+  arr.reverse();
+
+  for (a=0;a<=arr.length-1;a++){
+    pos = arr[a].indexOf("X",0)
+    if (pos !== -1){
+      return [pos, a];
+    }
+  }
+
+  return "Spaceship lost forever.";
+}
+ 
+ str = "'..........\n"+"..........\n"+"..........\n"+"..........\n"+"..........\n"+"..........";
+ var ret1 = findSpaceship( str);
+ console.log (ret1);
+ 
+
+  </script>
+
+
+
+
+</body>
+</html>
