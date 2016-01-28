@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta lang="en"/>
+
+</head>
+
+<body>
+
+<!----code wars
+http://www.codewars.com/kata/56a4872cbb65f3a610000026/train/javascript
+
+Take a number: 56789. Rotate left, you get 67895.
+
+Keep the first digit in place and rotate left the other digits: 68957.
+
+Keep the first two digits in place and rotate the other ones: 68579.
+
+Keep the first three digits and rotate left the rest: 68597. Now it is over since keeping the first four it remains only one digit which rotated is itself.
+
+You have the following sequence of numbers:
+
+56789 -> 67895 -> 68957 -> 68579 -> 68597
+
+and you must return the greatest: 68957.
+
+Calling this function max_rot (or maxRot or ... depending on the language)
+
+max_rot(56789) should return 68957
+
+
+-->
+
+
+<script>
+
+function maxRot(n) {
+  receivedArr = String(n).split('');
+  receivedArrLen = receivedArr.length;
+  var sequencesArr = [];
+
+
+  for (a=0;a<=receivedArrLen-1;a++){
+      if (a===0){
+        removed = receivedArr.splice(0,1);
+        sequencesArr.push(receivedArr.concat(removed).join(''));
+      } else  {
+        var lastseqind = a-1;var indcut = a; 
+        var tmparr = sequencesArr[lastseqind].split('');
+        removed = tmparr.splice(indcut,1);
+        sequencesArr.push(tmparr.concat(removed).join(''));
+      }
+      console.log (sequencesArr);
+  }
+
+  sequencesArr.push(n);
+  sequencesArr.sort(function(a,b){
+    return b-a;
+  });
+
+  
+  return Number(sequencesArr[0]);
+
+}
+ 
+  
+ var ret1 = maxRot(507992495);
+ console.log (ret1);
+ 
+
+  </script>
+
+
+
+
+</body>
+</html>

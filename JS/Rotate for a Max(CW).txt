@@ -1,0 +1,67 @@
+function maxRot(n) {
+  var arr=[];arr.push(n);
+  var str=n+'';
+  str=str.slice(1)+str[0];
+  arr.push(str);
+  for(var i=1;i<str.length-1;i++){
+    str=str.slice(0,i)+str.slice(i+1)+str[i];
+    arr.push(str);
+  }
+  return Math.max.apply(null,arr.map(function(i){return i*1;}))
+}
+
+const rotate = (arr) => arr.concat(arr.shift());
+
+function maxRot(n) {
+  let arr = [...`${n}`];
+  let res = [arr];
+  for (let i = 0, l = arr.length; i < l; i++) {
+    res.unshift(res[0].slice(0,i).concat(rotate(res[0].slice(i))));
+  }
+  return Math.max(...res.map(arr => arr.join("")).map(Number));
+}
+
+function maxRot(n) {
+  s=n+""; b=""; l=s.length;
+  for (i=0;i<l;i++) {
+    t=(s+s).substring(1,l-i+1); s=t.substr(1,l+1);
+    if((p=parseInt((b+t).substring(0,l)))>n) n=p;
+    b+=t[0];
+  }  
+  return n
+}
+
+function maxRot(n) {
+  let nArr = [...('' + n)];
+  let nums = [n];
+  for(let i = 0; i < nArr.length; i++) {
+    // escape if we cannot have a greater number
+    if(nArr[i] > nArr[i+1]) break;
+    
+    let t = nArr.splice(i, 1);
+    nArr.push(t);
+    nums.push(+nArr.join(''));
+  }
+  return Math.max(...nums);
+}
+
+function maxRot(n) {
+  var res = n;
+  n = n.toString().split('');
+  for (var i = 1; i < n.length; i++) {
+    n.push(n.splice(i - 1, 1)[0]);
+    res = Math.max(res, +n.join(''));
+  };
+  return res;
+}
+
+function maxRot(n) {
+  let nArr = [...('' + n)];
+  let nums = [n];
+  for(let i = 0; i < nArr.length; i++) {
+    let t = nArr.splice(i, 1);
+    nArr.push(t);
+    nums.push(+nArr.join(''));
+  }
+  return Math.max(...nums);
+}
