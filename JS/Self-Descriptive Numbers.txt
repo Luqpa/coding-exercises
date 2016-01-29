@@ -1,0 +1,23 @@
+const selfDescriptive=num=>(n=>n.split("").map((a,i)=>(n.match(new RegExp(i,"g")) || []).length==+a).reduce((a,b)=>a && b, true))(""+num);
+
+function selfDescriptive(num) {
+  return (n=>n.split("").map((a,i)=>(n.match(new RegExp(i,"g")) || []).length==+a).reduce((a,b)=>a && b, true))(""+num);
+}
+
+function selfDescriptive(num) {
+  const stringyNum = num.toString()
+  for (let i = 0; i < stringyNum.length; i++) {
+    let myRegExp = new RegExp(i, "g")
+    if (stringyNum[i] != (stringyNum.match(myRegExp) || []).length) {
+      return false
+    }
+  }
+  return true
+}
+
+const selfDescriptive = num => (num+'').split('').every((d,i,arr) => arr.filter(x => x == i).length == d)
+
+function selfDescriptive(num) {
+  let ds = Array.from(num.toString()).map(Number);
+  return ds.every((d, i) => d == ds.filter((x) => x == i).length);
+}
