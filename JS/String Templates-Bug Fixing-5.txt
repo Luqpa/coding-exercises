@@ -1,0 +1,13 @@
+function buildString(...template){
+  return `I like ${template.join(', ')}!`;
+}
+
+const buildString = (...template) => `I like ${template.join(', ')}!`;
+
+function buildString(){
+  var args = Array.prototype.slice.call(arguments);
+  return 'I like '+ args.join(', ') + '!';
+}
+
+var buildString = (...template) => `I like ${template.join(', ')}!`;
+
