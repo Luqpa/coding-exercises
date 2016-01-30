@@ -1,0 +1,23 @@
+var isSquare = function(arr){
+  return (arr.length) ? arr.every(x=>Math.sqrt(x)%1==0) : undefined;
+}
+
+const isSquare = (arr) => arr.length ? arr.every(x => Number.isInteger(Math.sqrt(x))) : void 0
+
+var isSquare = function(arr){
+  return arr.length? arr.every( i=>Math.sqrt(i)%1==0 ): undefined;
+}
+
+const isSquare = arr => {
+  return arr.length ? arr.every(e => {
+    let s = Math.sqrt(e);
+    return ~~s === s;
+  }) : undefined;
+}
+
+const isSquare = arr => arr.length ? arr.every(v => /^\d+$/.test(Math.sqrt(v))) : undefined;
+
+var isSquare = function(arr){
+  if (!arr.length) return undefined;
+  return arr.every(x => Number.isInteger(Math.sqrt(x)));
+}

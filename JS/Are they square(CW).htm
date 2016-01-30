@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta lang="en"/>
+
+</head>
+
+<body>
+
+<!----code wars
+http://www.codewars.com/kata/56853c44b295170b73000007/train/javascript
+Write a function that checks whether all elements in an array are square numbers. The function should be able to take any number of array elements.
+
+Your function should return true if all elements in the array are square numbers and false if not.
+
+An empty array should return undefined. You can assume that all array elements will be positive integers.
+
+Examples:
+
+isSquare([1, 4, 9, 16]);
+//returns true
+
+isSquare([3, 4, 7, 9]);
+//returns false
+
+isSquare([]);
+//returns undefined
+
+
+
+
+-->
+
+
+<script>
+
+
+ var isSquare = function(arr){
+    if (arr.length < 1) {return undefined};
+    var bSquare = true;
+
+    arr.forEach (function(cv){
+        if ( Number.isInteger(Math.sqrt(cv)) == false){bSquare = false;}
+    })
+
+    return bSquare;
+ } 
+  
+ var ret1 = isSquare([])
+  console.log (ret1);
+ 
+
+  </script>
+
+
+
+
+</body>
+</html>
