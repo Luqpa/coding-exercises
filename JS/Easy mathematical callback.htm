@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta lang="en"/>
+
+</head>
+
+<body>
+
+<!----code wars
+http://www.codewars.com/kata/54b7c8d2cd7f51a839000ebf/train/javascript
+Write a function, which takes as parameters an array and a callback function. The callback function is a mathematical function that will be applied on each element of this array.
+
+For example :
+
+var myArray = [4, 8, 2, 7, 5];
+myArray = processArray(myArray,function (a) {
+  return a * 2;
+});
+
+=> myArray will be : [ 8, 16, 4, 14, 10 ]
+
+var myArray = [7, 8, 9, 1, 2];
+myArray = processArray(myArray, function (a) {
+  return a + 5;
+});
+
+=> myArray will be : [ 12, 13, 14, 6, 7 ]
+
+-->
+
+
+<script>
+ function fnClb(a){
+ 	console.log (a);
+ 	return a * 2;
+ }
+
+ function processArray(arr, callback) {
+	    var newarr = arr.map(function (cv){
+	    	return callback(cv);
+	    });
+	    return newarr;
+ }
+
+
+ arr = [4, 8, 2, 7, 5];
+ var ret1 = processArray(arr, fnClb);
+  console.log (ret1);
+ 
+
+  </script>
+
+
+
+
+</body>
+</html>
