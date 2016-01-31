@@ -1,0 +1,40 @@
+Array.prototype.max = function() {
+  return Math.max(...this);
+}
+
+Array.prototype.max = function() {return Math.max.apply(null, this); }
+
+// Your code
+Array.prototype.max = function() {
+  return this.reduce(function(max, current) {
+     if(isNaN(parseInt(current))) {
+       return parseInt(current);
+     }
+     return current > max ? parseInt(current) : max;
+  }, 0);
+}
+
+Array.prototype.max = function () {
+  let nums = this.map(Number);
+  return ~nums.indexOf(NaN) ? NaN : Math.max(...nums);
+};
+
+// Your code
+Array.prototype.max = function() {
+  return parseInt(this.sort().splice(-1));
+}
+
+// Your code
+Array.prototype.max = function() {
+  return Math.max(...this);
+}
+
+Array.prototype.max = function() {
+  return Math.max.apply(null, this);
+}
+
+Array.prototype.max = function() {
+  var maxItem = +this.sort()[this.length-1];
+  return Number.isFinite(maxItem) ? maxItem : NaN;
+};
+
