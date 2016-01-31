@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta lang="en"/>
+
+</head>
+
+<body>
+
+<!----code wars
+http://www.codewars.com/kata/557efeb04effce569d000022/train/javascript 
+Implement a function called makeAcronym that returns the first letters of each word in a passed in string.
+
+Make sure the letters returned are uppercase.
+
+If the value passed in is not a string return 'Not a string'.
+
+If the value passed in is a string which contains characters other than spaces and alphabet letters, return 'Not letters'.
+
+If the string is empty, just return the string itself: "".
+
+EXAMPLES:
+
+'Hello codewarrior' -> 'HC'
+
+'a42' -> 'Not letters'
+
+42 -> 'Not a string'
+
+[2,12] -> 'Not a string'
+
+{name: 'Abraham'} -> 'Not a string'
+
+
+
+
+-->
+
+
+<script>
+
+
+var makeAcronym = function(string){
+    
+    var sTypeOfVar; var typeTmp = Object.prototype.toString.call( string );
+    switch (typeTmp){
+        case '[object Array]':
+            sTypeOfVar = 'array';
+            break;
+        case '[object String]':
+            sTypeOfVar = 'string';
+            break;
+        case '[object Number]':
+            sTypeOfVar = 'number';
+            break;
+        case '[object Object]':
+            sTypeOfVar = 'object';
+            break;
+    }
+        
+    if (sTypeOfVar !== 'string'){return 'Not a string';}
+        
+    if (sTypeOfVar === 'string'){
+        var numberDetected = false;
+        arrToCheck = string.split('').map(function(cv){
+            if (cv !== ' '){
+            if ( isNaN(Number(cv)) === false){numberDetected = true;}
+
+            }
+        });
+        if (numberDetected === true){return 'Not letters';}
+
+    }
+
+    var retarr = string.split(' ').map(function(cv){
+        return cv.slice(0,1).toUpperCase();
+    });
+
+    return retarr.join('');
+};
+ 
+  
+ var ret1 = makeAcronym('sdf hjk');
+  console.log (ret1);
+ 
+
+  </script>
+
+
+
+
+</body>
+</html>
