@@ -1,0 +1,25 @@
+function semicolonSeparationToCommaSeparation(input) {
+  return input.split(";")._join(",");  
+}
+
+Array.prototype.join = Array.prototype._join;
+function semicolonSeparationToCommaSeparation(input) {
+  return input.split(";").join(",");
+}
+
+Array.prototype.join=function(s){
+  return this.reduce((p,c,i)=>p+(i?s+c:c),'');
+}
+function semicolonSeparationToCommaSeparation(input){
+  return input.split(";").join(",");  
+}
+
+function semicolonSeparationToCommaSeparation(input) {
+  return input.split(";").join(",");  
+}
+
+Array.prototype.join = function () {
+  for (var i = 0, c = ''; i < this.length; i++) c += this[i] + ",";
+  return c.slice(0, -1);
+}
+
