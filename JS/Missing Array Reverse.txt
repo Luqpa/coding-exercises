@@ -1,0 +1,24 @@
+Array.prototype.reverse = function() {
+  for(var i = 0, j = this.length-1; i < j; i++, j--) {
+    var tmp = this[i];
+    this[i] = this[j];
+    this[j] = tmp;
+  }
+  return this;
+};
+
+Array.prototype.reverse = function() {
+  var arr = this.splice(0);  
+  
+  while(arr.length) {
+    this.push(arr.pop());
+  }   
+  
+  return this;
+};
+
+Array.prototype.reverse = function() {
+  var copy = this.slice(0);
+  return this.forEach(function(el, i){ this[i] = copy.pop();}, this), this;
+};
+
