@@ -1,0 +1,13 @@
+const countCombinations = (string, key) => (string.match(RegExp(key, 'gi')) || []).length;
+
+function countCombinations(string, key) {
+  return (string.match(RegExp(key, "gi")) || []).length
+}
+
+const countCombinations = function(string, key) {
+  return m = string.match(new RegExp(key, 'gi')), m != null ? m.length : 0;
+}
+
+var countCombinations = function(string, key){
+  return (string.match(new RegExp(key,"gi")) || []).length; //account for no matches and empty arrays
+}
