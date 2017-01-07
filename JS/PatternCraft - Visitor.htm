@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+<meta lang="en"/>
+
+</head>
+
+<body>
+
+<!----code wars
+http://www.codewars.com/kata/5682e646d5eddc1e21000017/train/javascript
+The Visitor Design Pattern can be used, for example, to determine how an attack deals a different amount of damage to a unit in the StarCraft game.
+https://www.youtube.com/watch?v=KSEyIXnknoY
+The pattern consists of delegating the responsibility to a different class.
+
+When a unit takes damage it can tell the visitor what to do with itself.
+Your Task
+
+Complete the code so that when a Tank attacks a Marine it takes 21 damage and when a Tank attacks a Marauder it takes 32 damage.
+
+The Marine's initial health should be set to 100 and the Marauder's health should be set to 125.
+
+https://sourcemaking.com/design_patterns/visitor
+https://en.wikipedia.org/wiki/Visitor_pattern
+
+-->
+
+
+<script>
+
+class Marine {
+  constructor() {
+    
+  }
+  accept(visitor) {  }
+}
+
+class Marauder {
+  constructor() {
+    
+  }
+  accept(visitor) {  }
+}
+
+class TankBullet {
+  visitLight(unit) {
+    
+  }
+  visitArmored(unit) {
+    
+  }
+}
+
+ function trickyDoubles(n){
+ //insert your code here
+ var possibleTricky = (String(n).length)%2;
+ if (possibleTricky !=0 ) {return 2*n } else {
+    var middle = (String(n).length /2);
+    var numP1 = String(n).slice(0,middle);
+    var numP2 = String(n).slice(middle);
+    
+    if (numP1 == numP2) {console.log ('same');}
+    return numP1 == numP2 ? n : 2*n;
+ }
+ 
+
+
+ return n;
+}
+ 
+  
+ var ret1 = trickyDoubles(100100);
+  console.log (ret1);
+ 
+
+  </script>
+
+
+
+
+</body>
+</html>
